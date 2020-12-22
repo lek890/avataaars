@@ -99,10 +99,10 @@ export default class Avatar extends React.Component<any> {
                   />
                 </g>
                 <Clothe />
-                <Face />
+                {/* <Face />
                 <Top>
                   <Accessories />
-                </Top>
+                </Top> */}
               </g>
             </g>
           </g>

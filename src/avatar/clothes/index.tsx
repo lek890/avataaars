@@ -12,18 +12,18 @@ import ShirtVNeck from './ShirtVNeck'
 import { ClotheOption, Selector } from '../../options'
 
 export default class Clothes extends React.Component {
-  render () {
+  render() {
     return (
       <Selector option={ClotheOption} defaultOption={BlazerShirt}>
         <BlazerShirt />
-        <BlazerSweater />
+        {/* <BlazerSweater />
         <CollarSweater />
         <GraphicShirt />
         <Hoodie />
         <Overall />
         <ShirtCrewNeck />
         <ShirtScoopNeck />
-        <ShirtVNeck />
+        <ShirtVNeck /> */}
       </Selector>
     )
   }
