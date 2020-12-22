@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "node_modules/.bin/webpack --config webpack.prod.js --mode production"
+    "build": "webpack --mode production"
   },
   "repository": "git@github.com:fangpenlin/avataaars.git",
   "author": "Fang-Pen Lin <hello@fangpenlin.com>",

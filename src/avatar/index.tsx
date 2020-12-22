@@ -111,20 +111,3 @@ export default class Avatar extends React.Component<any> {
     )
   }
 }
-
-export const TestComp: React.FC = () => {
-  return (
-    <Avatar
-      avatarStyle={AvatarStyle.Circle}
-      topType="LongHairStraight"
-      accessoriesType="Blank"
-      hairColor="BrownDark"
-      facialHairType="Blank"
-      clotheType="BlazerShirt"
-      eyeType="Default"
-      eyebrowType="Default"
-      mouthType="Default"
-      skinColor="Light"
-    />
-  )
-}

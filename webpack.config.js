@@ -1,17 +1,12 @@
 const path = require('path'),
     webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
-var nodeExternals = require('webpack-node-externals');
 module.exports = {
-     target: 'node', 
-    externals: [nodeExternals()],
-    entry: {
-        app: ['./src/index.tsx', 'webpack-hot-middleware/client'],
-        vendor: ['react', 'react-dom']
-    },
+    entry: './src/index.tsx',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].bundle.js'
+        path: path.resolve(__dirname, 'build'),
+        filename: 'js/[name].bundle.js',
+        // publicPath: "/build/",
     },
     devtool: 'source-map',
     resolve: {
