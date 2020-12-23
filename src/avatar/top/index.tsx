@@ -36,12 +36,13 @@ import WinterHat2 from './WinterHat2'
 import WinterHat3 from './WinterHat3'
 import WinterHat4 from './WinterHat4'
 import { Selector, TopOption } from '../../options'
+import { SelectorNew } from '../../options/SelectorNew'
 
 export default class Top extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <Selector defaultOption={LongHairStraight} option={TopOption}>
+      <SelectorNew defaultOption={LongHairStraight} optionMeta={TopOption}>
         <NoHair>{children}</NoHair>
         <Eyepatch>{children}</Eyepatch>
         <Hat>{children}</Hat>
@@ -80,7 +81,7 @@ export default class Top extends React.Component {
         <ShortHairSides>{children}</ShortHairSides>
         <ShortHairTheCaesar>{children}</ShortHairTheCaesar>
         <ShortHairTheCaesarSidePart>{children}</ShortHairTheCaesarSidePart>
-      </Selector>
+      </SelectorNew>
     )
   }
 }

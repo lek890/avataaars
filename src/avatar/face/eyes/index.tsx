@@ -13,11 +13,12 @@ import Surprised from './Surprised'
 import Wink from './Wink'
 import WinkWacky from './WinkWacky'
 import { EyesOption, Selector } from '../../../options'
+import { SelectorNew } from '../../../options/SelectorNew'
 
 export default class Eyes extends React.Component {
-  render () {
+  render() {
     return (
-      <Selector defaultOption={Default} option={EyesOption}>
+      <SelectorNew defaultOption={Default} optionMeta={EyesOption}>
         <Close />
         <Cry />
         <Default />
@@ -30,7 +31,7 @@ export default class Eyes extends React.Component {
         <Surprised />
         <Wink />
         <WinkWacky />
-      </Selector>
+      </SelectorNew>
     )
   }
 }

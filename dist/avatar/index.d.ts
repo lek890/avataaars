@@ -7,6 +7,4 @@ export interface Props {
     avatarStyle: AvatarStyle;
     style?: React.CSSProperties;
 }
-export default class Avatar extends React.Component<any> {
-    render(): JSX.Element;
-}
+export declare const AvatarNew: React.FC<Props>;

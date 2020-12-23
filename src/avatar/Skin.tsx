@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Selector, SkinOption } from '../options'
+import { SelectorNew } from '../options/SelectorNew'
 
 export interface Props {
   maskID: string
@@ -38,7 +39,7 @@ const Black = makeColor('Black', '#614335')
 export default class Skin extends React.Component<Props> {
   render() {
     return (
-      <Selector option={SkinOption} defaultOption={Light}>
+      <SelectorNew optionMeta={SkinOption} defaultOption={Light}>
         <Tanned maskID={this.props.maskID} />
         <Yellow maskID={this.props.maskID} />
         <Pale maskID={this.props.maskID} />
@@ -46,7 +47,7 @@ export default class Skin extends React.Component<Props> {
         <Brown maskID={this.props.maskID} />
         <DarkBrown maskID={this.props.maskID} />
         <Black maskID={this.props.maskID} />
-      </Selector>
+      </SelectorNew>
     )
   }
 }

@@ -10,21 +10,24 @@ import ShirtCrewNeck from './ShirtCrewNeck'
 import ShirtScoopNeck from './ShirtScoopNeck'
 import ShirtVNeck from './ShirtVNeck'
 import { ClotheOption, Selector } from '../../options'
+import { SelectorNew } from '../../options/SelectorNew'
 
 export default class Clothes extends React.Component {
   render() {
     return (
-      <Selector option={ClotheOption} defaultOption={BlazerShirt}>
-        <BlazerShirt />
-        {/* <BlazerSweater />
-        <CollarSweater />
-        <GraphicShirt />
-        <Hoodie />
-        <Overall />
-        <ShirtCrewNeck />
-        <ShirtScoopNeck />
-        <ShirtVNeck /> */}
-      </Selector>
+      <>
+        <SelectorNew optionMeta={ClotheOption} defaultOption={BlazerShirt}>
+          <BlazerShirt />
+          <BlazerSweater />
+          <CollarSweater />
+          <GraphicShirt />
+          <Hoodie />
+          <Overall />
+          <ShirtCrewNeck />
+          <ShirtScoopNeck />
+          <ShirtVNeck />
+        </SelectorNew>
+      </>
     )
   }
 }

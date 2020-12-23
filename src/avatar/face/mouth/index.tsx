@@ -13,11 +13,12 @@ import Tongue from './Tongue'
 import Twinkle from './Twinkle'
 import Vomit from './Vomit'
 import { MouthOption, Selector } from '../../../options'
+import { SelectorNew } from '../../../options/SelectorNew'
 
 export default class Mouth extends React.Component {
-  render () {
+  render() {
     return (
-      <Selector defaultOption={Default} option={MouthOption}>
+      <SelectorNew defaultOption={Default} option={MouthOption}>
         <Concerned />
         <Default />
         <Disbelief />
@@ -30,7 +31,7 @@ export default class Mouth extends React.Component {
         <Tongue />
         <Twinkle />
         <Vomit />
-      </Selector>
+      </SelectorNew>
     )
   }
 }

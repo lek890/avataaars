@@ -7,12 +7,12 @@ import Prescription02 from './Prescription02'
 import Round from './Round'
 import Sunglasses from './Sunglasses'
 import Wayfarers from './Wayfarers'
-import { AccessoriesOption, Selector } from '../../../options'
+import { SelectorNew } from '../../../options/SelectorNew'
 
 export default class Accessories extends React.Component {
-  render () {
+  render() {
     return (
-      <Selector defaultOption={Blank} option={AccessoriesOption}>
+      <SelectorNew>
         <Blank />
         <Kurt />
         <Prescription01 />
@@ -20,7 +20,7 @@ export default class Accessories extends React.Component {
         <Round />
         <Sunglasses />
         <Wayfarers />
-      </Selector>
+      </SelectorNew>
     )
   }
 }

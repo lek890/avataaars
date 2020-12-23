@@ -1,10 +1,13 @@
 import * as React from 'react'
-import Avatar, { AvatarStyle } from './avatar'
+import { AvatarNew, AvatarStyle } from './avatar'
+import Avatar from './avatar/index copy'
+// import Avatar, { AvatarStyle } from './avatar'
+import { allOptions } from './options'
+import { OptionContextProvider } from './options/OptionContextNew'
 
 export const TestComp = () => {
   return (
     <>
-      <p>hello dvssss2 323 23</p>
       <Avatar
         avatarStyle={AvatarStyle.Circle}
         // topType="LongHairStraight"
@@ -17,6 +20,10 @@ export const TestComp = () => {
         // mouthType="Default"
         // skinColor="Light"
       />
+      <p>hello dvssss2 323 23</p>
+      <OptionContextProvider>
+        <AvatarNew avatarStyle={AvatarStyle.Circle}></AvatarNew>
+      </OptionContextProvider>
     </>
   )
 }

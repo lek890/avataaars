@@ -1,22 +1,23 @@
 import * as React from 'react'
 
 import { HatColorOption, Selector } from '../../options'
+import { SelectorNew } from '../../options/SelectorNew'
 
 export interface Props {
   maskID: string
   defaultColor?: string
 }
 
-function makeColor (name: string, color: string) {
+function makeColor(name: string, color: string) {
   class ColorComponent extends React.Component<Props> {
-    render () {
+    render() {
       return (
         <g
-          id='Color/Palette/Gray-01'
+          id="Color/Palette/Gray-01"
           mask={`url(#${this.props.maskID})`}
-          fillRule='evenodd'
+          fillRule="evenodd"
           fill={color}>
-          <rect id='🖍Color' x='0' y='0' width='264' height='280' />
+          <rect id="🖍Color" x="0" y="0" width="264" height="280" />
         </g>
       )
     }
@@ -46,8 +47,8 @@ const White = makeColor('White', '#FFFFFF')
 export default class Colors extends React.Component<Props> {
   render() {
     return (
-      <Selector
-        option={HatColorOption}
+      <SelectorNew
+        optionMeta={HatColorOption}
         defaultOption={this.props.defaultColor || Gray01}>
         <Black maskID={this.props.maskID} />
         <Blue01 maskID={this.props.maskID} />
@@ -64,7 +65,7 @@ export default class Colors extends React.Component<Props> {
         <Pink maskID={this.props.maskID} />
         <Red maskID={this.props.maskID} />
         <White maskID={this.props.maskID} />
-      </Selector>
+      </SelectorNew>
     )
   }
 }

@@ -29,16 +29,19 @@ export default class Selector extends React.Component<Props> {
   componentWillMount() {
     const { option, defaultOption } = this.props
     const { optionContext } = this
-    const defaultValue =
-      typeof defaultOption === 'string'
-        ? defaultOption
-        : getComponentOptionValue(defaultOption)
-    optionContext.addStateChangeListener(this.optionContextUpdate)
-    optionContext.optionEnter(option.key)
-    const optionState = optionContext.getOptionState(option.key)
-    this.updateOptionValues()
-    if (optionState) {
-      optionContext.setDefaultValue(option.key, defaultValue)
+
+    if (optionContext) {
+      const defaultValue =
+        typeof defaultOption === 'string'
+          ? defaultOption
+          : getComponentOptionValue(defaultOption)
+      optionContext.addStateChangeListener(this.optionContextUpdate)
+      optionContext.optionEnter(option.key)
+      const optionState = optionContext.getOptionState(option.key)
+      this.updateOptionValues()
+      if (optionState) {
+        optionContext.setDefaultValue(option.key, defaultValue)
+      }
     }
   }
 
@@ -55,6 +58,10 @@ export default class Selector extends React.Component<Props> {
     let result: React.ReactNode | null = null
     const { option, children } = this.props
     const value = this.optionContext.getValue(option.key)!
+    console.log(
+      '🚀 ~ file: Selector.tsx ~ line 58 ~ Selector ~ render ~ value',
+      value
+    )
     React.Children.forEach(children, (child) => {
       if (getComponentOptionValue((child as any).type) === value) {
         result = child
