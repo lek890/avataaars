@@ -10,6 +10,6 @@ export interface Props {
     style?: React.CSSProperties;
     viewBox?: string;
 }
-export default class PieceComponent extends React.Component<Props> {
+export default class PieceComponent extends React.Component<any> {
     render(): JSX.Element;
 }

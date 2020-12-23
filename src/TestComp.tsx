@@ -4,6 +4,7 @@ import Avatar from './avatar/index copy'
 // import Avatar, { AvatarStyle } from './avatar'
 import { allOptions } from './options'
 import { OptionContextProvider } from './options/OptionContextNew'
+import Piece from './avatar/piece'
 
 export const TestComp = () => {
   return (
@@ -33,6 +34,11 @@ export const TestComp = () => {
           eyebrowType="Default"
           mouthType="Default"
           skinColor="Light"></AvatarNew>
+        <Piece
+          avatarStyle={AvatarStyle.Circle}
+          eyeType="EyeRoll"
+          pieceSize="100"
+          pieceType="eyes"></Piece>
       </OptionContextProvider>
     </>
   )

@@ -25,7 +25,7 @@ export interface Props {
   viewBox?: string
 }
 
-export default class PieceComponent extends React.Component<Props> {
+export default class PieceComponent extends React.Component<any> {
   render() {
     return (
       <svg
@@ -36,13 +36,15 @@ export default class PieceComponent extends React.Component<Props> {
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink">
-        {this.props.pieceType === 'top' && <Top />}
+        {this.props.pieceType === 'top' && <Top renderPieceOnly={true} />}
         {this.props.pieceType === 'clothe' && <Clothe />}
         {this.props.pieceType === 'graphics' && <Graphics maskID="1234" />}
         {(this.props.pieceType === 'accessories' ||
           this.props.pieceType === 'accesories') && <Accessories />}
         {this.props.pieceType === 'facialHair' && <FacialHair />}
-        {this.props.pieceType === 'eyes' && <Eyes />}
+        {this.props.pieceType === 'eyes' && (
+          <Eyes renderPieceOnly={true} pieceDescription={this.props} />
+        )}
         {this.props.pieceType === 'eyebrows' && <Eyebrows />}
         {this.props.pieceType === 'mouth' && <Mouth />}
         {this.props.pieceType === 'nose' && <Nose />}

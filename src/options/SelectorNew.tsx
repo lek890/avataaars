@@ -13,12 +13,18 @@ function getComponentOptionValue(component: React.ComponentClass) {
 export const SelectorNew: React.FC<{
   defaultOption?: any
   optionMeta?: any
-}> = ({ optionMeta, children }) => {
+  renderPieceOnly?: boolean
+  pieceDescription?: any
+}> = ({ optionMeta, children, renderPieceOnly = false, pieceDescription }) => {
   const { options } = React.useContext(OptionContextNew)
-  const value = options ? options[optionMeta.key] : ''
+  const avatarCondition = options ? options[optionMeta.key] : ''
+  const pieceOnlyCondition = pieceDescription
+    ? pieceDescription[optionMeta['_key']]
+    : ''
+  const value = renderPieceOnly ? pieceOnlyCondition : avatarCondition
 
   let result: React.ReactNode | null = null
-
+  //todo: default option
   value &&
     React.Children.forEach(children, (child) => {
       if (getComponentOptionValue((child as any).type) === value) {
