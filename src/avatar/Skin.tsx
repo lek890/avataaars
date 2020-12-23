@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Selector, SkinOption } from '../options'
+import { PieceProps } from './piece'
 
 export interface Props {
   maskID: string
@@ -35,10 +36,10 @@ const Brown = makeColor('Brown', '#D08B5B')
 const DarkBrown = makeColor('DarkBrown', '#AE5D29')
 const Black = makeColor('Black', '#614335')
 
-export default class Skin extends React.Component<Props> {
+export default class Skin extends React.Component<Props & PieceProps> {
   render() {
     return (
-      <Selector option={SkinOption} defaultOption={Light}>
+      <Selector optionMeta={SkinOption} defaultOption={Light}>
         <Tanned maskID={this.props.maskID} />
         <Yellow maskID={this.props.maskID} />
         <Pale maskID={this.props.maskID} />

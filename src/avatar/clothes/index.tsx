@@ -10,11 +10,15 @@ import ShirtCrewNeck from './ShirtCrewNeck'
 import ShirtScoopNeck from './ShirtScoopNeck'
 import ShirtVNeck from './ShirtVNeck'
 import { ClotheOption, Selector } from '../../options'
+import { PieceProps } from '../piece'
 
-export default class Clothes extends React.Component {
-  render () {
+export default class Clothes extends React.Component<PieceProps> {
+  render() {
     return (
-      <Selector option={ClotheOption} defaultOption={BlazerShirt}>
+      <Selector
+        optionMeta={ClotheOption}
+        defaultOption={BlazerShirt}
+        {...this.props}>
         <BlazerShirt />
         <BlazerSweater />
         <CollarSweater />

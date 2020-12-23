@@ -1,21 +1,24 @@
 {
-  "name": "avataaars",
-  "version": "1.2.1",
-  "description": "React component for avataaars ",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "name": "awesome-react-avataaars",
+  "version": "1.0.1",
+  "description": "This is the upgraded version of https://github.com/fangpenlin/avataaars",
+  "main": "dist/avatar/index.js",
+  "types": "dist/avatar/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react",
     "avatar"
   ],
-  "repository": "git@github.com:fangpenlin/avataaars.git",
-  "author": "Fang-Pen Lin <hello@fangpenlin.com>",
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "^16.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lek890/avataaars.git"
   },
+  "author": "Lekshmi Chandra <lekshmi.chandra90@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
-    "@types/react": "^16.0.25",
+    "@types/react": "^16.3.5",
     "import-sort-style-renke": "^4.2.0",
     "tslint": "^5.8.0",
     "tslint-config-standard": "^7.0.0",
@@ -23,8 +26,8 @@
     "typescript": "^2.6.2"
   },
   "dependencies": {
-    "lodash": ">=4.17.11",
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.0",
+    "uuid": "^8.3.2"
   },
   "importSort": {
     ".js, .jsx, .es6, .es": {
@@ -35,5 +38,12 @@
       "parser": "typescript",
       "style": "import-sort-style-renke"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/lek890/avataaars/issues"
+  },
+  "homepage": "https://github.com/lek890/avataaars#readme",
+  "peerDependencies": {
+    "react": "^16.3.1"
   }
 }

@@ -11,13 +11,9 @@ import Eyebrows from './face/eyebrow'
 import Mouth from './face/mouth'
 import Nose from './face/nose'
 import Skin from './Skin'
+import { AvatarStyle } from '.'
 
-export enum AvatarStyle {
-  Circle = 'Circle',
-  Transparent = 'Transparent',
-}
-
-export interface Props {
+export interface PieceComponentProps {
   pieceSize?: string
   pieceType?: string
   avatarStyle: AvatarStyle
@@ -25,28 +21,42 @@ export interface Props {
   viewBox?: string
 }
 
-export default class PieceComponent extends React.Component<Props> {
+export interface PieceProps {
+  renderPieceOnly?: boolean
+  pieceDescription?: any
+}
+
+export default class PieceComponent extends React.Component<PieceComponentProps> {
   render() {
+    const pieceProps = { renderPieceOnly: true, pieceDescription: this.props }
     return (
       <svg
         style={this.props.style}
         width={`${this.props.pieceSize}px`}
         height={`${this.props.pieceSize}px`}
-        viewBox={this.props.viewBox || "0 0 264 280"}
+        viewBox={this.props.viewBox || '0 0 264 280'}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink">
-        {this.props.pieceType === 'top' && <Top />}
-        {this.props.pieceType === 'clothe' && <Clothe />}
-        {this.props.pieceType === 'graphics' && <Graphics maskID="1234" />}
+        {this.props.pieceType === 'top' && <Top {...pieceProps} />}
+        {this.props.pieceType === 'clothe' && <Clothe {...pieceProps} />}
+        {this.props.pieceType === 'graphics' && (
+          <Graphics maskID="1234" {...pieceProps} />
+        )}
         {(this.props.pieceType === 'accessories' ||
-          this.props.pieceType === 'accesories') && <Accessories />}
-        {this.props.pieceType === 'facialHair' && <FacialHair />}
-        {this.props.pieceType === 'eyes' && <Eyes />}
-        {this.props.pieceType === 'eyebrows' && <Eyebrows />}
-        {this.props.pieceType === 'mouth' && <Mouth />}
-        {this.props.pieceType === 'nose' && <Nose />}
-        {this.props.pieceType === 'skin' && <Skin maskID="5678" />}
+          this.props.pieceType === 'accesories') && (
+          <Accessories {...pieceProps} />
+        )}
+        {this.props.pieceType === 'facialHair' && (
+          <FacialHair {...pieceProps} />
+        )}
+        {this.props.pieceType === 'eyes' && <Eyes {...pieceProps} />}
+        {this.props.pieceType === 'eyebrows' && <Eyebrows {...pieceProps} />}
+        {this.props.pieceType === 'mouth' && <Mouth {...pieceProps} />}
+        {this.props.pieceType === 'nose' && <Nose {...pieceProps} />}
+        {this.props.pieceType === 'skin' && (
+          <Skin maskID="5678" {...pieceProps} />
+        )}
       </svg>
     )
   }

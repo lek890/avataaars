@@ -13,11 +13,15 @@ import Tongue from './Tongue'
 import Twinkle from './Twinkle'
 import Vomit from './Vomit'
 import { MouthOption, Selector } from '../../../options'
+import { PieceProps } from '../../piece'
 
-export default class Mouth extends React.Component {
-  render () {
+export default class Mouth extends React.Component<PieceProps> {
+  render() {
     return (
-      <Selector defaultOption={Default} option={MouthOption}>
+      <Selector
+        defaultOption={Default}
+        optionMeta={MouthOption}
+        {...this.props}>
         <Concerned />
         <Default />
         <Disbelief />

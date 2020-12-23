@@ -13,11 +13,12 @@ import Surprised from './Surprised'
 import Wink from './Wink'
 import WinkWacky from './WinkWacky'
 import { EyesOption, Selector } from '../../../options'
+import { PieceProps } from '../../piece'
 
-export default class Eyes extends React.Component {
-  render () {
+export default class Eyes extends React.Component<PieceProps> {
+  render() {
     return (
-      <Selector defaultOption={Default} option={EyesOption}>
+      <Selector defaultOption={Default} optionMeta={EyesOption} {...this.props}>
         <Close />
         <Cry />
         <Default />

@@ -37,11 +37,17 @@ import WinterHat3 from './WinterHat3'
 import WinterHat4 from './WinterHat4'
 import { Selector, TopOption } from '../../options'
 
-export default class Top extends React.Component {
-  render () {
+export default class Top extends React.Component<{
+  renderPieceOnly?: boolean
+  pieceDescription?: any
+}> {
+  render() {
     const { children } = this.props
     return (
-      <Selector defaultOption={LongHairStraight} option={TopOption}>
+      <Selector
+        defaultOption={LongHairStraight}
+        optionMeta={TopOption}
+        {...this.props}>
         <NoHair>{children}</NoHair>
         <Eyepatch>{children}</Eyepatch>
         <Hat>{children}</Hat>

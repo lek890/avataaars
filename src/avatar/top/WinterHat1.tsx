@@ -1,17 +1,17 @@
 import * as React from 'react'
-import { uniqueId } from 'lodash'
+import { getUniqueId } from '../../utils/uniqueId'
 
 import FacialHair from './facialHair'
 import HatColor from './HatColor'
 
 export default class WinterHat1 extends React.Component {
   static optionValue = 'WinterHat1'
-  private filter1 = uniqueId('react-filter-')
-  private mask1 = uniqueId('react-mask-')
-  private mask2 = uniqueId('react-mask-')
-  private path1 = uniqueId('react-path-')
-  private path2 = uniqueId('react-path-')
-  private path3 = uniqueId('react-path-')
+  private filter1 = getUniqueId('react-filter-')
+  private mask1 = getUniqueId('react-mask-')
+  private mask2 = getUniqueId('react-mask-')
+  private path1 = getUniqueId('react-path-')
+  private path2 = getUniqueId('react-path-')
+  private path3 = getUniqueId('react-path-')
 
   render() {
     const { filter1, mask1, mask2, path1, path2, path3 } = this
