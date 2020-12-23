@@ -4,15 +4,23 @@ import { allOptions } from './index'
 
 interface OptionContextProps {
   allOptions: Option[]
+  setOptions: (options: any) => void
+  options: any
 }
 
 export const OptionContextNew = React.createContext({} as OptionContextProps)
 
-export const OptionContextProvider: React.FC = ({ children }) => (
-  <OptionContextNew.Provider
-    value={{
-      allOptions,
-    }}>
-    {children}
-  </OptionContextNew.Provider>
-)
+export const OptionContextProvider: React.FC = ({ children }) => {
+  const [options, setOptions] = React.useState({})
+
+  return (
+    <OptionContextNew.Provider
+      value={{
+        allOptions,
+        setOptions,
+        options,
+      }}>
+      {children}
+    </OptionContextNew.Provider>
+  )
+}

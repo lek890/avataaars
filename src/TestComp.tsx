@@ -22,7 +22,17 @@ export const TestComp = () => {
       />
       <p>hello dvssss2 323 23</p>
       <OptionContextProvider>
-        <AvatarNew avatarStyle={AvatarStyle.Circle}></AvatarNew>
+        <AvatarNew
+          avatarStyle={AvatarStyle.Circle}
+          topType="LongHairStraight"
+          accessoriesType="Blank"
+          hairColor="BrownDark"
+          facialHairType="Blank"
+          clotheType="BlazerShirt"
+          eyeType="Default"
+          eyebrowType="Default"
+          mouthType="Default"
+          skinColor="Light"></AvatarNew>
       </OptionContextProvider>
     </>
   )

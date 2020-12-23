@@ -7,21 +7,22 @@ import { OptionContextNew } from './OptionContextNew'
 export const SelectorNew: React.FC<{
   defaultOption?: any
   optionMeta?: any
-}> = ({ children }) => {
-  const { allOptions } = React.useContext(OptionContextNew)
-  console.log(
-    '🚀 ~ file: SelectorNew.tsx ~ line 10 ~ SelectorNew ~ allOptions',
-    allOptions
-  )
-  // const value = this.optionContext.getValue(option.key)!
+}> = ({ optionMeta, children }) => {
+  const { options } = React.useContext(OptionContextNew)
+  const value = options ? options[optionMeta.key] : ''
+  console.log('🚀 ~ file: SelectorNew.tsx ~ line 17 ~ optionMeta', optionMeta)
+  console.log('🚀 ~ file: SelectorNew.tsx ~ line 13 ~ value', value)
 
-  //     React.Children.forEach(children, (child) => {
-  //       if (getComponentOptionValue((child as any).type) === value) {
-  //         result = child
-  //       }
-  //     })
+  let result: React.ReactNode | null = null
 
-  return <div>{children} </div>
+  value &&
+    React.Children.forEach(children, (child) => {
+      if (getComponentOptionValue((child as any).type) === value) {
+        result = child
+      }
+    })
+
+  return result
 }
 
 function getComponentOptionValue(component: React.ComponentClass) {

@@ -18,7 +18,7 @@ import { SelectorNew } from '../../../options/SelectorNew'
 export default class Mouth extends React.Component {
   render() {
     return (
-      <SelectorNew defaultOption={Default} option={MouthOption}>
+      <SelectorNew defaultOption={Default} optionMeta={MouthOption}>
         <Concerned />
         <Default />
         <Disbelief />

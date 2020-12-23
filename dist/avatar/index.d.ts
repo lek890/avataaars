@@ -7,4 +7,4 @@ export interface Props {
     avatarStyle: AvatarStyle;
     style?: React.CSSProperties;
 }
-export declare const AvatarNew: React.FC<Props>;
+export declare const AvatarNew: React.FC<any>;

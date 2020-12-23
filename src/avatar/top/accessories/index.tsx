@@ -8,11 +8,12 @@ import Round from './Round'
 import Sunglasses from './Sunglasses'
 import Wayfarers from './Wayfarers'
 import { SelectorNew } from '../../../options/SelectorNew'
+import { AccessoriesOption } from '../../../options'
 
 export default class Accessories extends React.Component {
   render() {
     return (
-      <SelectorNew>
+      <SelectorNew optionMeta={AccessoriesOption} defaultOption={Blank}>
         <Blank />
         <Kurt />
         <Prescription01 />

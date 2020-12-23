@@ -5,6 +5,7 @@ import Clothe from './clothes'
 import Face from './face'
 import Skin from './Skin'
 import Top from './top'
+import { OptionContextNew } from '../options/OptionContextNew'
 
 export enum AvatarStyle {
   Circle = 'Circle',
@@ -16,7 +17,12 @@ export interface Props {
   style?: React.CSSProperties
 }
 
-export const AvatarNew: React.FC<Props> = ({ avatarStyle, ...props }) => {
+export const AvatarNew: React.FC<any> = ({ avatarStyle, ...props }) => {
+  const { setOptions } = React.useContext(OptionContextNew)
+
+  React.useEffect(() => {
+    setOptions(props)
+  }, [])
   // // const { avatarStyle } = this.props
   // console.log(
   //   '🚀 ~ file: index.tsx ~ line 22 ~ AvatarNew ~ render ~ avatarStyle',
@@ -101,9 +107,11 @@ export const AvatarNew: React.FC<Props> = ({ avatarStyle, ...props }) => {
                   mask="url(#mask-6)"
                 />
               </g>
-              {/* <Clothe /> */}
-              {/* <Face /> */}
-              <Top>{/* <Accessories /> */}</Top>
+              <Clothe />
+              <Face />
+              <Top>
+                <Accessories />
+              </Top>
             </g>
           </g>
         </g>
