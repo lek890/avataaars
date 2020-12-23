@@ -3,7 +3,6 @@ import Option from './Option'
 import { allOptions } from './index'
 
 interface OptionContextProps {
-  allOptions: Option[]
   setOptions: (options: any) => void
   options: any
 }
@@ -16,7 +15,6 @@ export const OptionContextProvider: React.FC = ({ children }) => {
   return (
     <OptionContextNew.Provider
       value={{
-        allOptions,
         setOptions,
         options,
       }}>

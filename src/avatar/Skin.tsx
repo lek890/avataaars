@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Selector, SkinOption } from '../options'
+import { SkinOption } from '../options'
 import { SelectorNew } from '../options/SelectorNew'
 
 export interface Props {
